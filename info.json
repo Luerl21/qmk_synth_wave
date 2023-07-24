@@ -10,6 +10,17 @@
         "pid": "0x4148",
         "device_version": "0.0.1"
     },
+    "split": {
+        "enabled": true,
+         "encoder": {
+                "right": {
+                    "rotary": [
+                        {"pin_a": "GP19", "pin_b": "GP20", "resolution": 3},
+                        {"pin_a": "GP19", "pin_b": "GP20", "resolution": 3}
+                    ]
+                }
+            }
+        },
     "layouts": {
         "LAYOUT_ortho_4x6": {
             "layout": [
