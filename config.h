@@ -1,0 +1,36 @@
+// Copyright 2022 Stefan Kerkmann
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#pragma once
+
+#define MATRIX_COL_PINS { GP2, GP2, GP3, GP3, GP4, GP4 }
+#define MATRIX_ROW_PINS { GP8, GP9, GP10, GP11 }
+#define DIODE_DIRECTION ROW2COL
+
+#define USE_I2C
+#define SOFT_SERIAL_PIN GP18
+
+#define WS2812_PIO_USE_PIO1
+#define WS2812_DI_PIN D2
+#define DRIVER_LED_TOTAL 42
+#define RGBLED_NUM 42
+#define RGB_MATRIX_SPLIT { 21, 21 }
+
+#define SERIAL_DRIVER = usart
+#define SERIAL_USART_SPEED = 1
+#define SERIAL_USART_TX_PIN = GP0
+#define SERIAL_USART_RX_PIN = GP1
+#define SERIAL_USART_FULL_DUPLEX
+#define SERIAL_USART_DRIVER SD1
+
+#define RAW_USAGE_PAGE 0xFF60
+#define RAW_USAGE_ID 0x61
+#define VIAL_KEYBOARD_UID {0x6E, 0xAA, 0x34, 0x26, 0x03, 0x6E, 0x98, 0xD4}
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
+#define VIAL_COMBO_ENTRIES 6
+
+#define DEBUG_MATRIX_SCAN_RATE
+#define TAPPING_TERM 100
+#define SPLIT_WPM_ENABLE
+
+#define MIDI_ADVANCED
