@@ -1,0 +1,13 @@
+#ifdef ENCODER_ENABLE
+
+    #ifdef ENCODER_MAP_ENABLE
+    const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+        [0] =   { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+        [1] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+        [2] =   { ENCODER_CCW_CW(RGB_VAD, RGB_VAI), ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+        // [3] =   { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD), ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+        // [4] =   { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD), ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+    };
+    #endif
+
+#endif

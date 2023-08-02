@@ -10,17 +10,33 @@
         "pid": "0x4148",
         "device_version": "0.0.1"
     },
-    "split": {
-        "enabled": true,
-         "encoder": {
-                "right": {
-                    "rotary": [
-                        {"pin_a": "GP19", "pin_b": "GP20", "resolution": 3},
-                        {"pin_a": "GP19", "pin_b": "GP20", "resolution": 3}
-                    ]
-                }
-            }
-        },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "B1", "pin_b": "B3", "resolution": 4 }
+         ]
+    },
+    "rgb_matrix": {
+        "driver": "WS2812",
+        "animations": {
+            "breathing": true,
+            "cycle_all": true,
+            "cycle_left_right": true,
+            "cycle_up_down": true,
+            "rainbow_moving_chevron": true,
+            "cycle_out_in": true,
+            "cycle_out_in_dual": true,
+            "cycle_pinwheel": true,
+            "cycle_spiral": true,
+            "dual_beacon": true,
+            "rainbow_beacon": true,
+            "raindrops": true,
+            "typing_heatmap": true,
+            "solid_reactive_simple": true,
+            "solid_reactive": true,
+            "solid_reactive_cross": true,
+            "multisplash": true
+        }
+    },
     "layouts": {
         "LAYOUT_ortho_4x6": {
             "layout": [
@@ -63,12 +79,14 @@
                 {"label": "R17", "matrix": [6, 4], "x": 13, "y": 2.3},
                 {"label": "R18", "matrix": [6, 5], "x": 14, "y": 2.3},
 
-                {"label": "L21", "matrix": [3, 3], "x": 4, "y": 3.7},
-                {"label": "L20", "matrix": [3, 4], "x": 5, "y": 3.7},
-                {"label": "L19", "matrix": [3, 5], "x": 6, "y": 3.2},
-                {"label": "R19", "matrix": [7, 3], "x": 8, "y": 3.2},
-                {"label": "R20", "matrix": [7, 4], "x": 9, "y": 3.7},
-                {"label": "R21", "matrix": [7, 5], "x": 10, "y": 3.7}
+                {"label": "L21", "matrix": [3, 2], "x": 4, "y": 3.7},
+                {"label": "L20", "matrix": [3, 3], "x": 5, "y": 3.7},
+                {"label": "L19", "matrix": [3, 4], "x": 6, "y": 3.2},
+                {"label": "L19", "matrix": [3, 5], "x": 7, "y": 3.2},
+                {"label": "R19", "matrix": [7, 2], "x": 8, "y": 3.2},
+                {"label": "R20", "matrix": [7, 3], "x": 9, "y": 3.2},
+                {"label": "R21", "matrix": [7, 4], "x": 10, "y": 3.7},
+                {"label": "R22", "matrix": [7, 5], "x": 11, "y": 3.7}
             ]
         }
     }

@@ -1,2 +1,3 @@
 # Corne Japanese Duplex keyboard
-![Scheme](/assets/scheme.png)
+![Scheme](/assets/scheme1.png)
+![Scheme2](/assets/scheme2.png)

@@ -2,11 +2,11 @@
 #include <stdbool.h>
 #include "wait.h"
 #include "util.h"
-// #include "matrix.h"
 #include "config.h"
 #include "quantum.h"
 #include "debounce.h"
 #include "print.h"
+#include <atmega32u4_test.h>
 
 /* Copied from here: https://github.com/e3w2q/qmk_firmware/blob/762fe3e0a7cbea768245a75520f06ff5a2f00b9f/keyboards/2x3test/matrix.c */
 
@@ -15,8 +15,7 @@
 
 #define COL_SHIFTER ((uint16_t)1)
 
-// static const pin_t row_pins[] = { GP8, GP9, GP10, GP11, GP8, GP9, GP10, GP11 };
-static const pin_t row_pins[] = { C6, D0, D0, D0, C6, D0, D0, D0 };
+static const pin_t row_pins[] = { B6, B5, B4, E6, B6, B5, B4, E6 };
 static const pin_t col_pins[] = MATRIX_COL_PINS;
 static matrix_row_t previous_matrix[MATRIX_ROWS];
 

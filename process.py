@@ -37,8 +37,8 @@ def send_raw_packet(data):
         print("No device found")
         sys.exit(1)
 
-    request_data = [0x00] * 33 # First byte is Report ID
-    request_data[1:len(data) + 1] = data
+    request_data = [0x00] * 32 # First byte is Report ID
+    request_data[2:len(data) + 0] = data
     request_packet = bytes(request_data)
 
     print("Request:")
