@@ -3,19 +3,19 @@
 
 #pragma once
 
-#define MATRIX_ROW_PINS { B6, B5, B4, E6}
-#define MATRIX_COL_PINS { D4, D7, C6, D4, D7, C6 }
+#define MATRIX_ROW_PINS { GP10, GP11, GP12, GP13}
+#define MATRIX_COL_PINS { GP2, GP3, GP4, GP2, GP3, GP4 }
 #define DIODE_DIRECTION ROW2COL
 
 #define MASTER_LEFT
 
-#define SOFT_SERIAL_PIN D2
+#define SOFT_SERIAL_PIN GP1
 
 #define RGBLED_NUM 42
 
 #ifdef RGB_MATRIX_ENABLE
     #define ENABLE_RGB_MATRIX_TYPING_HEATMAP	
-    #define WS2812_DI_PIN F6
+    #define WS2812_DI_PIN GP16
     #define RGB_MATRIX_LED_COUNT RGBLED_NUM
     #define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 // #   define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
@@ -31,7 +31,7 @@
 #endif
 
 #ifdef RGBLIGHT_ENABLE
-    #define WS2812_DI_PIN F6
+    #define WS2812_DI_PIN GP17
     #define RGBLIGHT_SPLIT
     #define RGBLED_SPLIT { 21, 21 }
 //   #define RGBLIGHT_HUE_STEP 8
@@ -63,4 +63,8 @@
 #define TAPPING_TERM 100
 #define SPLIT_WPM_ENABLE
 
-#define MIDI_ADVANCED
+#define MIDI_ADVANCED   
+
+#ifdef OLED_ENABLE
+    #define OLED_DISPLAY_128x32  
+#endif

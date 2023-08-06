@@ -9,28 +9,10 @@ via_config g_config = {
 };
 
 void values_load(void) {
-    if(g_config.animation == 0){
-        print("0 load");
-    }
-    if(g_config.animation == 1){
-        print("1 load");
-    }
-    if(g_config.animation == 2){
-        print("2 load");
-    }
     eeprom_read_block(&g_config, ((void *) VIA_EEPROM_CUSTOM_CONFIG_ADDR), sizeof(g_config));
 }
 
 void values_save(void) {
-    if(g_config.animation == 0){
-        print("0 save");
-    }
-    if(g_config.animation == 1){
-        print("1 save");
-    }
-    if(g_config.animation == 2){
-        print("2 save");
-    }
     eeprom_update_block(&g_config, ((void *) VIA_EEPROM_CUSTOM_CONFIG_ADDR), sizeof(g_config));
 }
 

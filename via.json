@@ -4,7 +4,7 @@
     "productId": "0x4148",
     "matrix": {"rows": 8, "cols": 6},
     "keycodes": ["qmk_lighting"],
-    "menus": ["qmk_rgb_matrix",
+    "menus": [
         {
             "label": "Custom",
             "content": [
@@ -16,8 +16,9 @@
                             "type": "dropdown",
                             "options": [
                               ["Bongo-cat", 0],
-                              ["Test1", 1],
-                              ["Test2", 2]
+                              ["Status", 1],
+                              ["Test2", 2],
+                              ["Test3", 3]
                             ],
                             "content": ["id_animation", 0, 1]
                           }
