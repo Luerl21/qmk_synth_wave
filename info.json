@@ -1,7 +1,7 @@
 {
     "keyboard_name": "Luerl",
-    "processor": "atmega32u4",
-    "bootloader": "caterina",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "manufacturer": "Luerl",
     "url": "",
     "maintainer": "Luerl",

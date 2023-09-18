@@ -12,15 +12,34 @@
                     "label": "Oled",
                     "content": [
                         {
-                            "label": "Oled animation",
+                            "label": "Master Oled",
                             "type": "dropdown",
                             "options": [
                               ["Bongo-cat", 0],
-                              ["Status", 1],
-                              ["Test2", 2],
-                              ["Test3", 3]
+                              ["Info", 1],
+                              ["Image1", 2],
+                              ["Image2", 3],
+                              ["Image3", 4],
+                              ["Tic Tac Toe", 5],
+                              ["Snake", 6],
+                              ["Calculator", 7]
                             ],
-                            "content": ["id_animation", 0, 1]
+                            "content": ["id_master_animation", 0, 0]
+                          },
+                        {
+                            "label": "Slave Oled",
+                            "type": "dropdown",
+                            "options": [
+                              ["Bongo-cat", 0],
+                              ["Info", 1],
+                              ["Image1", 2],
+                              ["Image2", 3],
+                              ["Image3", 4],
+                              ["Tic Tac Toe", 5],
+                              ["Snake", 6],
+                              ["Calculator", 7]
+                            ],
+                            "content": ["id_slave_animation", 0, 1]
                           }
                     ]
                 }

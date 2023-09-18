@@ -1,9 +1,14 @@
 #include QMK_KEYBOARD_H
 
+enum my_keycodes {
+    TEST = SAFE_RANGE,
+    TEST2
+};
+
 #define _BL 0
 #define _NL 1
 // #define _GL 2
-#define _BOOT 2
+// #define _BOOT 2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BL] = LAYOUT_ortho_4x6(
@@ -14,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                             TG(_BOOT), KC_LGUI,   MO(_NL),  KC_SPC,     KC_Q, KC_ENT,   MO(_NL), KC_RALT
+                            QK_BOOT, KC_LGUI,   MO(_NL),  KC_SPC,     KC_Q, KC_ENT,   MO(_NL), KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -26,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                             KC_MUTE, KC_LGUI, TG(_BOOT),  KC_SPC,     KC_Q, KC_ENT, XXXXXXX, KC_RALT
+                             KC_MUTE, KC_LGUI, TG(_NL),  KC_SPC,     KC_Q, KC_ENT, XXXXXXX, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -42,17 +47,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       //`--------------------------'  `--------------------------'
 //   ),
 
-  [_BOOT] = LAYOUT_ortho_4x6(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
-  ),
+//   [_BOOT] = LAYOUT_ortho_4x6(
+//   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+//       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
+//   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+//       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+//   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+//       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+//   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+//                                 KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+//                                       //`--------------------------'  `--------------------------'
+//   ),
 
 
 //   [2] = LAYOUT_ortho_4x6(
@@ -98,10 +103,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ),
 };
 
-#include <oled.c>
+#include <oled/oled.c>
+
+// #include <joystick.c>
 
 #include <encoder.c>
 
+#include <custom_keycode.c>
+
 #include <rgb_matrix.c>
+
+#include <oled/sync.c>
 
 // #include <raw_hid.c>

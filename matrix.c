@@ -6,12 +6,12 @@
 #include "quantum.h"
 #include "debounce.h"
 #include "print.h"
-#include <atmega32u4_test.h>
+#include <qmk_corne_jp_duplex.h>
 
 #define MATRIX_IO_DELAY 30
 #define COL_SHIFTER ((uint16_t)1)
 
-static const pin_t row_pins[] = { E6, F7, B5, B6, E6, F7, B5, B6 };
+static const pin_t row_pins[] = { GP10, GP11, GP12, GP13, GP10, GP11, GP12, GP13 };
 static const pin_t col_pins[] = MATRIX_COL_PINS;
 static matrix_row_t previous_matrix[MATRIX_ROWS];
 

@@ -3,17 +3,26 @@
 
 #pragma once
 
-#define MATRIX_ROW_PINS { GP10, GP11, GP12, GP13}
+#define SPLIT_TRANSACTION_IDS_USER OLED_ID
+
+#undef OLED_FONT_H
+#define OLED_FONT_H	"./keymaps/via/font.c"
+
+#define MATRIX_ROW_PINS { GP10, GP11, GP12, GP13 }
 #define MATRIX_COL_PINS { GP2, GP3, GP4, GP2, GP3, GP4 }
 #define DIODE_DIRECTION ROW2COL
 
 #define MASTER_LEFT
 
-#define SOFT_SERIAL_PIN GP1
-
 #define RGBLED_NUM 42
 
+#ifdef POINTING_DEVICE_ENABLE
+    #define ANALOG_JOYSTICK_X_AXIS_PIN F6
+    #define ANALOG_JOYSTICK_Y_AXIS_PIN F5
+#endif
+
 #ifdef RGB_MATRIX_ENABLE
+    #define NOP_FUDGE 0.4
     #define ENABLE_RGB_MATRIX_TYPING_HEATMAP	
     #define WS2812_DI_PIN GP16
     #define RGB_MATRIX_LED_COUNT RGBLED_NUM
@@ -31,7 +40,8 @@
 #endif
 
 #ifdef RGBLIGHT_ENABLE
-    #define WS2812_DI_PIN GP17
+    #define NOP_FUDGE 0.4
+    #define WS2812_DI_PIN GP16
     #define RGBLIGHT_SPLIT
     #define RGBLED_SPLIT { 21, 21 }
 //   #define RGBLIGHT_HUE_STEP 8
@@ -49,14 +59,10 @@
 //   #define RGBLIGHT_EFFECT_ALTERNATING
 #endif
 
-#define SERIAL_USART_TX_PIN = D0
-#define SERIAL_USART_RX_PIN = D1 
-#define SERIAL_USART_FULL_DUPLEX
-
 #define RAW_USAGE_PAGE 0xFF60
 #define RAW_USAGE_ID 0x61
 #define VIAL_KEYBOARD_UID {0x6E, 0xAA, 0x34, 0x26, 0x03, 0x6E, 0x98, 0xD4}
-#define DYNAMIC_KEYMAP_LAYER_COUNT 3
+#define DYNAMIC_KEYMAP_LAYER_COUNT 2
 #define VIAL_COMBO_ENTRIES 6
 
 #define DEBUG_MATRIX_SCAN_RATE
@@ -66,5 +72,13 @@
 #define MIDI_ADVANCED   
 
 #ifdef OLED_ENABLE
+    #define I2C1_SCL_PIN        GP7
+    #define I2C1_SDA_PIN        GP6
+    #define I2C_DRIVER I2CD1
     #define OLED_DISPLAY_128x32  
 #endif
+
+#define SERIAL_USART_FULL_DUPLEX
+#    define SOFT_SERIAL_PIN GP0
+#    define SERIAL_USART_TX_PIN SOFT_SERIAL_PIN
+#define SERIAL_USART_RX_PIN GP1
