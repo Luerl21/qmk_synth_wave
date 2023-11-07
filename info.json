@@ -1,13 +1,13 @@
 {
-    "keyboard_name": "Luerl",
+    "keyboard_name": "Synth Wave",
     "processor": "RP2040",
     "bootloader": "rp2040",
     "manufacturer": "Luerl",
     "url": "",
     "maintainer": "Luerl",
     "usb": {
-        "vid": "0x0002",
-        "pid": "0x4148",
+        "vid": "0x1337",
+        "pid": "0x1488",
         "device_version": "0.0.1"
     },
     "encoder": {

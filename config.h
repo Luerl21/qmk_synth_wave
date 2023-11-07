@@ -5,6 +5,8 @@
 
 #define SPLIT_TRANSACTION_IDS_USER OLED_ID
 
+#define SPLIT_USB_DETECT
+
 #undef OLED_FONT_H
 #define OLED_FONT_H	"./keymaps/via/font.c"
 
@@ -41,7 +43,7 @@
 
 #ifdef RGBLIGHT_ENABLE
     #define NOP_FUDGE 0.4
-    #define WS2812_DI_PIN GP16
+    #define WS2812_DI_PIN GP17
     #define RGBLIGHT_SPLIT
     #define RGBLED_SPLIT { 21, 21 }
 //   #define RGBLIGHT_HUE_STEP 8
@@ -62,7 +64,7 @@
 #define RAW_USAGE_PAGE 0xFF60
 #define RAW_USAGE_ID 0x61
 #define VIAL_KEYBOARD_UID {0x6E, 0xAA, 0x34, 0x26, 0x03, 0x6E, 0x98, 0xD4}
-#define DYNAMIC_KEYMAP_LAYER_COUNT 2
+#define DYNAMIC_KEYMAP_LAYER_COUNT 7
 #define VIAL_COMBO_ENTRIES 6
 
 #define DEBUG_MATRIX_SCAN_RATE
@@ -78,7 +80,8 @@
     #define OLED_DISPLAY_128x32  
 #endif
 
+#define WS2812_PIO_USE_PIO1
 #define SERIAL_USART_FULL_DUPLEX
-#    define SOFT_SERIAL_PIN GP0
-#    define SERIAL_USART_TX_PIN SOFT_SERIAL_PIN
-#define SERIAL_USART_RX_PIN GP1
+#define SOFT_SERIAL_PIN GP0
+#define SERIAL_USART_TX_PIN SOFT_SERIAL_PIN
+#define SERIAL_USART_RX_PIN GP1 

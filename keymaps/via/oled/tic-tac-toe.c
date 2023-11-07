@@ -138,10 +138,9 @@ int cell;
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
-            case KC_0:
             case KC_1 ... KC_9:
                 if (!is_game_over) {
-                    cell = keycode - KC_1 + 1;
+                    cell = keycode - KC_1;
                     if (cell >= 0 && cell <= 8) {
                         int row = cell / 3;
                         int col = cell % 3;
