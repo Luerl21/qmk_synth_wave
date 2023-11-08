@@ -3,14 +3,14 @@
 
 #pragma once
 
-#define SERIAL_DEBUG
+#define MASTER_RIGHT
+#define SPLIT_TRANSPORT_MIRROR
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_LAYER_STATE_ENABLE
 
 #define WS2812_PIO_USE_PIO1
-#undef SOFT_SERIAL_PIN 
-#define SOFT_SERIAL_PIN GP0
+#define SOFT_SERIAL_PIN GP19
 #define SERIAL_USART_TX_PIN SOFT_SERIAL_PIN
-#define SERIAL_USART_RX_PIN GP1
-#define SERIAL_USART_FULL_DUPLEX
 
 #define SPLIT_TRANSACTION_IDS_USER OLED_ID
 
@@ -20,8 +20,6 @@
 #define MATRIX_ROW_PINS { GP10, GP11, GP12, GP13 }
 #define MATRIX_COL_PINS { GP2, GP3, GP4, GP2, GP3, GP4 }
 #define DIODE_DIRECTION ROW2COL
-
-#define MASTER_LEFT
 
 #define RGBLED_NUM 42
 
@@ -35,6 +33,7 @@
     #define ENABLE_RGB_MATRIX_TYPING_HEATMAP	
     #define WS2812_DI_PIN GP16
     #define RGB_MATRIX_LED_COUNT RGBLED_NUM
+    #define RGB_MATRIX_SPLIT { 21, 21 }
     #define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 // #   define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
     #define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
@@ -70,9 +69,7 @@
 
 #define RAW_USAGE_PAGE 0xFF60
 #define RAW_USAGE_ID 0x61
-#define VIAL_KEYBOARD_UID {0x6E, 0xAA, 0x34, 0x26, 0x03, 0x6E, 0x98, 0xD4}
 #define DYNAMIC_KEYMAP_LAYER_COUNT 7
-#define VIAL_COMBO_ENTRIES 6
 
 #define DEBUG_MATRIX_SCAN_RATE
 #define TAPPING_TERM 100

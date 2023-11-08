@@ -79,9 +79,9 @@
             {"flags": 4, "matrix": [3, 3], "x": 5, "y": 3.7},
             {"flags": 4, "matrix": [3, 4], "x": 6, "y": 3.2},
             {"flags": 4, "matrix": [3, 5], "x": 7, "y": 3.2},
-            {"flags": 4, "matrix": [7, 2], "x": 8, "y": 3.2},
-            {"flags": 4, "matrix": [7, 3], "x": 9, "y": 3.2},
-            {"flags": 4, "matrix": [7, 4], "x": 10, "y": 3.7}
+            {"flags": 4, "matrix": [7, 3], "x": 8, "y": 3.2},
+            {"flags": 4, "matrix": [7, 4], "x": 9, "y": 3.7},
+            {"flags": 4, "matrix": [7, 5], "x": 10, "y": 3.7}
         ]
     },
     "layouts": {
